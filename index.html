@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Halaman Utama</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
 
-  <!-- Proteksi halaman -->
-  <script src="js/auth.js"></script>
+<title>
+Penentuan Klasifikasi CUaca Pada Area Lahan Pertanian Menggunakan Metode K-Nearest neighbour
+</title>
+
+<link rel="stylesheet" href="css/style.css">
+<script src="js/auth.js"></script>
 </head>
-<body>
+<body class="dashboard-body">
 
-  <div class="container">
-    <h1>Selamat Datang</h1>
-    <p>Kamu sudah berhasil login.</p>
+<header class="topbar">
+  <h1>
+    Penentuan Klasifikasi CUaca Pada Area Lahan Pertanian Menggunakan Metode
+    K-Nearest neighbour
+  </h1>
+  <button class="logout" onclick="logout()">Logout</button>
+</header>
 
-    <button onclick="logout()">Logout</button>
+<main class="dashboard">
+
+  <div class="card">
+    <h3>Suhu</h3>
+    <p id="suhu" class="value">-</p>
+    <span class="unit">°C</span>
   </div>
 
+  <div class="card">
+    <h3>Kelembaban</h3>
+    <p id="kelembaban" class="value">-</p>
+    <span class="unit">%</span>
+  </div>
+
+  <div class="card">
+    <h3>Arah Angin</h3>
+    <p id="arahAngin" class="value">-</p>
+    <span class="unit">derajat</span>
+  </div>
+
+  <div class="card">
+    <h3>Kecepatan Angin</h3>
+    <p id="kecepatanAngin" class="value">-</p>
+    <span class="unit">m/s</span>
+  </div>
+
+  <div class="card">
+    <h3>Intensitas Cahaya</h3>
+    <p id="cahaya" class="value">-</p>
+    <span class="unit">lux</span>
+  </div>
+
+  <div class="card status">
+    <h3>Status Cuaca</h3>
+    <p id="statusCuaca" class="status-text">-</p>
+  </div>
+
+</main>
+
+<script src="js/dashboard.js"></script>
 </body>
 </html>
