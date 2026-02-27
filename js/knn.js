@@ -1,57 +1,20 @@
-const kRange = document.getElementById("kRange");
-const kVal   = document.getElementById("kVal");
-const rows   = document.getElementById("knnRows");
+function prosesKNN(){
 
-kRange.oninput=()=>kVal.textContent=kRange.value;
+  const s=Number(inSuhu.value);
+  const h=Number(inHum.value);
+  const a=Number(inAngin.value);
+  const l=Number(inLux.value);
 
-function rand(a,b){return Math.random()*(b-a)+a;}
-
-function runKNN(){
-
-  const k = parseInt(kRange.value);
-
-  const classes=["Cerah","Mendung","Hujan"];
-
-  const distances = [];
-  for(let i=0;i<12;i++){
-    distances.push({
-      jarak:rand(0.2,3.5),
-      kelas:classes[Math.floor(Math.random()*3)]
-    });
+  if(!s||!h||!a||!l){
+    hasilKNN.innerText="Input belum lengkap";
+    return;
   }
 
-  distances.sort((a,b)=>a.jarak-b.jarak);
-  const neigh = distances.slice(0,k);
+  let kelas="Cerah";
 
-  const count={};
-  neigh.forEach(n=>count[n.kelas]=(count[n.kelas]||0)+1);
+  if(h>80 && a>4) kelas="Hujan";
+  else if(l<300) kelas="Mendung";
+  else if(s>33) kelas="Panas";
 
-  let result="-",max=0;
-  for(const c in count){
-    if(count[c]>max){max=count[c];result=c;}
-  }
-
-  const avg = neigh.reduce((s,n)=>s+n.jarak,0)/k;
-
-  document.getElementById("resultClass").textContent=result;
-  document.getElementById("avgDist").textContent=avg.toFixed(3);
-  document.getElementById("minDist").textContent=neigh[0].jarak.toFixed(3);
-
-  rows.innerHTML="";
-  neigh.forEach((n,i)=>{
-    rows.innerHTML+=`
-      <tr>
-        <td>${i+1}</td>
-        <td>${n.jarak.toFixed(3)}</td>
-        <td>${n.kelas}</td>
-      </tr>`;
-  });
-
-  document.querySelector(".knn-result").animate(
-    [{transform:"scale(.96)",opacity:.6},{transform:"scale(1)",opacity:1}],
-    {duration:350}
-  );
+  hasilKNN.innerText=kelas;
 }
-
-document.getElementById("runBtn").onclick=runKNN;
-runKNN();
