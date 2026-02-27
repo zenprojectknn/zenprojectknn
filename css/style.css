@@ -1,24 +1,24 @@
 :root{
-  --glass:rgba(255,255,255,.18);
-  --border:rgba(255,255,255,.25);
+  --glass:rgba(255,255,255,.15);
+  --border:rgba(255,255,255,.28);
   --blur:18px;
-  --text:#0f172a;
 }
 
-*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
 
 .apple-bg{
   min-height:100vh;
+  margin:0;
   background:
     radial-gradient(circle at 20% 10%, #60a5fa, transparent 40%),
     radial-gradient(circle at 90% 20%, #34d399, transparent 40%),
     radial-gradient(circle at 50% 90%, #a78bfa, transparent 40%),
     #0b1220;
   color:white;
-  margin:0;
 }
-
-/* ---------- GLASS ---------- */
 
 .glass{
   background:var(--glass);
@@ -28,13 +28,13 @@
   border-radius:20px;
 }
 
-/* ---------- LOGIN ---------- */
+/* ================= LOGIN ================= */
 
 .login-apple{
   min-height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   background:
     radial-gradient(circle at top,#60a5fa,#0b1220 60%);
 }
@@ -43,15 +43,13 @@
   width:340px;
   padding:32px;
   text-align:center;
-  animation:fadeUp .6s ease;
+  animation:fadeUp .5s ease;
 }
-
-.login-panel h2{margin-bottom:6px}
 
 .subtitle{
   font-size:13px;
   opacity:.8;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
 .field{
@@ -65,8 +63,8 @@
   border-radius:12px;
   border:1px solid rgba(255,255,255,.25);
   background:rgba(255,255,255,.15);
-  outline:none;
   color:white;
+  outline:none;
 }
 
 .field label{
@@ -84,7 +82,6 @@
 .field input:valid + label{
   top:-6px;
   font-size:11px;
-  opacity:.9;
 }
 
 .btn-primary{
@@ -104,14 +101,14 @@
   color:#fecaca;
 }
 
-/* ---------- TOP BAR ---------- */
+/* ================= TOP ================= */
 
 .top-glass{
   margin:20px;
   padding:16px 22px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 }
 
 .title-wrap h1{
@@ -130,7 +127,7 @@
   cursor:pointer;
 }
 
-/* ---------- DASHBOARD ---------- */
+/* ================= GRID ================= */
 
 .grid-dashboard{
   padding:20px;
@@ -141,13 +138,11 @@
 
 .metric{
   padding:18px;
-  position:relative;
-  overflow:hidden;
   transition:.3s;
 }
 
 .metric:hover{
-  transform:translateY(-6px) scale(1.01);
+  transform:translateY(-6px);
 }
 
 .label{
@@ -157,7 +152,7 @@
 
 .big{
   display:block;
-  font-size:42px;
+  font-size:40px;
   font-weight:600;
   margin-top:10px;
 }
@@ -167,8 +162,9 @@
   opacity:.7;
 }
 
+/* ================= STATUS ================= */
+
 .status-card{
-  grid-column:span 2;
   padding:22px;
   display:flex;
   flex-direction:column;
@@ -177,19 +173,105 @@
 
 .status-card h2{
   margin:10px 0 0 0;
-  font-size:36px;
+  font-size:34px;
 }
 
 .status-icon{
   font-size:48px;
-  margin-top:10px;
+  margin-top:8px;
   animation:float 3s ease-in-out infinite;
 }
 
-/* ---------- ANIMATION ---------- */
+/* ================= KNN PANEL ================= */
+
+.knn-card{
+  grid-column:span 2;
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.knn-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.k-value{
+  font-size:13px;
+  opacity:.8;
+}
+
+.knn-main{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.knn-result{
+  min-width:200px;
+}
+
+.knn-label{
+  font-size:13px;
+  opacity:.7;
+}
+
+.knn-class{
+  font-size:34px;
+  font-weight:600;
+  margin-top:4px;
+}
+
+.knn-info{
+  display:flex;
+  gap:22px;
+  align-items:center;
+}
+
+.mini-label{
+  font-size:12px;
+  opacity:.7;
+}
+
+.mini-value{
+  display:block;
+  font-size:18px;
+  margin-top:4px;
+}
+
+.knn-table-wrap{
+  max-height:200px;
+  overflow:auto;
+}
+
+.knn-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+
+.knn-table th,
+.knn-table td{
+  padding:8px 10px;
+  text-align:left;
+}
+
+.knn-table thead{
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,.25);
+}
+
+.knn-table tbody tr{
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+/* ================= ANIMATION ================= */
 
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
+  from{opacity:0;transform:translateY(15px)}
   to{opacity:1;transform:none}
 }
 
