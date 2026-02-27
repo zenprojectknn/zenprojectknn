@@ -2,30 +2,24 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Login | Sistem Monitoring</title>
+<link rel="stylesheet" href="css/app.css">
 </head>
-<body class="login-bg">
+<body class="auth-bg">
 
-<div class="glass login-box">
-  <h2>Monitoring Cuaca</h2>
-  <p class="subtitle">Masuk ke sistem klasifikasi cuaca</p>
+<div class="login-wrapper">
+  <div class="glass login-card">
+    <h1>Monitoring System</h1>
+    <p class="subtitle">Silakan login untuk melanjutkan</p>
 
-  <form id="loginForm">
-    <div class="field">
-      <input id="username" required>
-      <label>Username</label>
-    </div>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button class="btn-primary" type="submit">Masuk</button>
+    </form>
 
-    <div class="field">
-      <input id="password" type="password" required>
-      <label>Password</label>
-    </div>
-
-    <button class="btn-main">Masuk</button>
-  </form>
-
-  <span id="error" class="error"></span>
+    <div id="error" class="error"></div>
+  </div>
 </div>
 
 <script src="js/login.js"></script>
