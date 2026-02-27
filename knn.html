@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>KNN</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/auth.js"></script>
+</head>
+<body class="apple-bg">
+
+<header class="topbar glass">
+  <h1>Visualisasi K-Nearest Neighbour</h1>
+
+  <div class="top-actions">
+    <a href="index.html" class="btn-link">Monitoring</a>
+    <button onclick="logout()" class="btn-ghost">Logout</button>
+  </div>
+</header>
+
+<main class="knn-layout">
+
+  <div class="glass knn-panel">
+    <h3>Parameter</h3>
+
+    <label>K
+      <input type="range" min="1" max="9" step="2" value="5" id="kRange">
+    </label>
+    <div class="k-view">K = <span id="kVal">5</span></div>
+
+    <button id="runBtn" class="btn-main">Proses KNN</button>
+  </div>
+
+  <div class="glass knn-result">
+    <h3>Hasil Klasifikasi</h3>
+    <div class="knn-class" id="resultClass">-</div>
+    <div class="knn-meta">
+      <div>Rata-rata jarak : <b id="avgDist">-</b></div>
+      <div>Jarak terdekat : <b id="minDist">-</b></div>
+    </div>
+  </div>
+
+  <div class="glass knn-table-wrap">
+    <h3>Tetangga Terdekat</h3>
+    <table class="knn-table">
+      <thead>
+        <tr><th>#</th><th>Jarak</th><th>Kelas</th></tr>
+      </thead>
+      <tbody id="knnRows"></tbody>
+    </table>
+  </div>
+
+</main>
+
+<script src="js/knn.js"></script>
+</body>
+</html>
