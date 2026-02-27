@@ -2,36 +2,69 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Monitoring</title>
-<link rel="stylesheet" href="css/style.css">
+
+<title>
+Penentuan Klasifikasi Cuaca Pada Area Lahan Pertanian Menggunakan Metode K-Nearest Neighbour
+</title>
+
+<link rel="stylesheet" href="css/app.css">
 <script src="js/auth.js"></script>
 </head>
-<body class="apple-bg">
+
+<body class="app-bg">
 
 <header class="topbar glass">
-  <h1>
-    Penentuan Klasifikasi CUaca Pada Area Lahan Pertanian
-    Menggunakan Metode K-Nearest Neighbour
-  </h1>
-
-  <div class="top-actions">
-    <a href="knn.html" class="btn-link">Halaman KNN</a>
-    <button onclick="logout()" class="btn-ghost">Logout</button>
+  <div>
+    <h2>Monitoring Cuaca Pertanian</h2>
+    <span class="small-title">Dashboard Realtime</span>
   </div>
+
+  <nav>
+    <a class="nav-link active" href="index.html">Monitoring</a>
+    <a class="nav-link" href="knn.html">KNN</a>
+    <button class="btn-outline" onclick="logout()">Logout</button>
+  </nav>
 </header>
 
-<main class="grid">
+<main class="dashboard">
 
-  <div class="card glass"><span>Suhu</span><b id="suhu">--</b><small>°C</small></div>
-  <div class="card glass"><span>Kelembaban</span><b id="hum">--</b><small>%</small></div>
-  <div class="card glass"><span>Arah Angin</span><b id="dir">--</b><small>°</small></div>
-  <div class="card glass"><span>Kecepatan Angin</span><b id="spd">--</b><small>m/s</small></div>
-  <div class="card glass"><span>Intensitas Cahaya</span><b id="lux">--</b><small>lux</small></div>
+  <div class="card-grid">
 
-  <div class="status glass">
-    <h3>Status Cuaca</h3>
-    <h2 id="status">-</h2>
-    <div id="icon" class="icon">☀️</div>
+    <div class="sensor-card">
+      <span>Suhu</span>
+      <h1 id="suhu">--</h1>
+      <small>°C</small>
+    </div>
+
+    <div class="sensor-card">
+      <span>Kelembaban</span>
+      <h1 id="hum">--</h1>
+      <small>%</small>
+    </div>
+
+    <div class="sensor-card">
+      <span>Arah Angin</span>
+      <h1 id="arah">--</h1>
+      <small>Derajat</small>
+    </div>
+
+    <div class="sensor-card">
+      <span>Kecepatan Angin</span>
+      <h1 id="speed">--</h1>
+      <small>m/s</small>
+    </div>
+
+    <div class="sensor-card">
+      <span>Intensitas Cahaya</span>
+      <h1 id="lux">--</h1>
+      <small>Lux</small>
+    </div>
+
+    <div class="sensor-card status">
+      <span>Status Cuaca</span>
+      <h1 id="status">---</h1>
+    </div>
+
   </div>
 
 </main>
