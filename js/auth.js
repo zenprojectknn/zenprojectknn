@@ -1,7 +1,8 @@
-if(localStorage.getItem("login")!=="true"){
-  location.href="login.html";
+if(!localStorage.getItem("login")){
+  window.location.href="login.html";
 }
+
 function logout(){
   localStorage.removeItem("login");
-  location.href="login.html";
+  window.location.href="login.html";
 }
