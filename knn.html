@@ -2,52 +2,53 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>KNN</title>
-<link rel="stylesheet" href="css/style.css">
+
+<title>Analisis KNN - Klasifikasi Cuaca</title>
+
+<link rel="stylesheet" href="css/app.css">
 <script src="js/auth.js"></script>
 </head>
-<body class="apple-bg">
+
+<body class="app-bg">
 
 <header class="topbar glass">
-  <h1>Visualisasi K-Nearest Neighbour</h1>
-
-  <div class="top-actions">
-    <a href="index.html" class="btn-link">Monitoring</a>
-    <button onclick="logout()" class="btn-ghost">Logout</button>
+  <div>
+    <h2>Klasifikasi Cuaca (KNN)</h2>
+    <span class="small-title">Simulasi Model</span>
   </div>
+
+  <nav>
+    <a class="nav-link" href="index.html">Monitoring</a>
+    <a class="nav-link active" href="knn.html">KNN</a>
+    <button class="btn-outline" onclick="logout()">Logout</button>
+  </nav>
 </header>
 
-<main class="knn-layout">
+<main class="knn-page">
 
-  <div class="glass knn-panel">
-    <h3>Parameter</h3>
+<div class="glass knn-panel">
 
-    <label>K
-      <input type="range" min="1" max="9" step="2" value="5" id="kRange">
-    </label>
-    <div class="k-view">K = <span id="kVal">5</span></div>
+<h3>Input Parameter</h3>
 
-    <button id="runBtn" class="btn-main">Proses KNN</button>
-  </div>
+<div class="form-grid">
 
-  <div class="glass knn-result">
-    <h3>Hasil Klasifikasi</h3>
-    <div class="knn-class" id="resultClass">-</div>
-    <div class="knn-meta">
-      <div>Rata-rata jarak : <b id="avgDist">-</b></div>
-      <div>Jarak terdekat : <b id="minDist">-</b></div>
-    </div>
-  </div>
+<input id="inSuhu" type="number" placeholder="Suhu (°C)">
+<input id="inHum" type="number" placeholder="Kelembaban (%)">
+<input id="inAngin" type="number" placeholder="Kecepatan Angin (m/s)">
+<input id="inLux" type="number" placeholder="Cahaya (lux)">
 
-  <div class="glass knn-table-wrap">
-    <h3>Tetangga Terdekat</h3>
-    <table class="knn-table">
-      <thead>
-        <tr><th>#</th><th>Jarak</th><th>Kelas</th></tr>
-      </thead>
-      <tbody id="knnRows"></tbody>
-    </table>
-  </div>
+</div>
+
+<button class="btn-primary" onclick="prosesKNN()">
+Proses Klasifikasi
+</button>
+
+<div class="result-box">
+<span>Hasil Klasifikasi</span>
+<h2 id="hasilKNN">-</h2>
+</div>
+
+</div>
 
 </main>
 
