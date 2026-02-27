@@ -1,34 +1,26 @@
-const el = id => document.getElementById(id);
-
-function rand(a,b){return Math.random()*(b-a)+a;}
-
-function animate(node,val){
-  node.animate(
-    [{transform:"scale(1)"},{transform:"scale(1.08)"},{transform:"scale(1)"}],
-    {duration:300}
-  );
-  node.textContent=val;
+function random(min,max){
+  return (Math.random()*(max-min)+min).toFixed(1);
 }
 
 function update(){
-  const s = rand(24,35).toFixed(1);
-  const h = rand(55,90).toFixed(1);
-  const d = rand(0,360).toFixed(0);
-  const w = rand(0,10).toFixed(1);
-  const l = rand(100,2000).toFixed(0);
+  const suhu=random(22,35);
+  const hum=random(50,90);
+  const arah=random(0,360);
+  const speed=random(0.5,8);
+  const lux=random(200,1200);
 
-  animate(el("suhu"),s);
-  animate(el("hum"),h);
-  animate(el("dir"),d);
-  animate(el("spd"),w);
-  animate(el("lux"),l);
+  document.getElementById("suhu").innerText=suhu;
+  document.getElementById("hum").innerText=hum;
+  document.getElementById("arah").innerText=arah;
+  document.getElementById("speed").innerText=speed;
+  document.getElementById("lux").innerText=lux;
 
-  let st="Cerah", ic="☀️";
-  if(h>80 && l<500){st="Hujan";ic="🌧️";}
-  else if(l<300){st="Mendung";ic="☁️";}
+  let status="Cerah";
 
-  el("status").textContent=st;
-  el("icon").textContent=ic;
+  if(hum>80 && speed>4) status="Hujan";
+  else if(lux<300) status="Mendung";
+
+  document.getElementById("status").innerText=status;
 }
 
 update();
