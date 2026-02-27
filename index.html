@@ -2,59 +2,58 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-
-<title>
-Penentuan Klasifikasi CUaca Pada Area Lahan Pertanian Menggunakan Metode K-Nearest neighbour
-</title>
-
+<title>Monitoring</title>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/auth.js"></script>
 </head>
-<body class="dashboard-body">
+<body class="apple-bg">
 
-<header class="topbar">
-  <h1>
-    Penentuan Klasifikasi CUaca Pada Area Lahan Pertanian Menggunakan Metode
-    K-Nearest neighbour
-  </h1>
-  <button class="logout" onclick="logout()">Logout</button>
+<header class="top-glass">
+  <div class="title-wrap">
+    <h1>
+      Penentuan Klasifikasi CUaca Pada Area Lahan Pertanian
+      Menggunakan Metode K-Nearest neighbour
+    </h1>
+  </div>
+  <button class="btn-ghost" onclick="logout()">Logout</button>
 </header>
 
-<main class="dashboard">
+<main class="grid-dashboard">
 
-  <div class="card">
-    <h3>Suhu</h3>
-    <p id="suhu" class="value">-</p>
+  <div class="metric glass">
+    <span class="label">Suhu</span>
+    <span class="big" id="suhu">--</span>
     <span class="unit">°C</span>
   </div>
 
-  <div class="card">
-    <h3>Kelembaban</h3>
-    <p id="kelembaban" class="value">-</p>
+  <div class="metric glass">
+    <span class="label">Kelembaban</span>
+    <span class="big" id="kelembaban">--</span>
     <span class="unit">%</span>
   </div>
 
-  <div class="card">
-    <h3>Arah Angin</h3>
-    <p id="arahAngin" class="value">-</p>
-    <span class="unit">derajat</span>
+  <div class="metric glass">
+    <span class="label">Arah Angin</span>
+    <span class="big" id="arahAngin">--</span>
+    <span class="unit">°</span>
   </div>
 
-  <div class="card">
-    <h3>Kecepatan Angin</h3>
-    <p id="kecepatanAngin" class="value">-</p>
+  <div class="metric glass">
+    <span class="label">Kecepatan Angin</span>
+    <span class="big" id="kecepatanAngin">--</span>
     <span class="unit">m/s</span>
   </div>
 
-  <div class="card">
-    <h3>Intensitas Cahaya</h3>
-    <p id="cahaya" class="value">-</p>
+  <div class="metric glass">
+    <span class="label">Intensitas Cahaya</span>
+    <span class="big" id="cahaya">--</span>
     <span class="unit">lux</span>
   </div>
 
-  <div class="card status">
-    <h3>Status Cuaca</h3>
-    <p id="statusCuaca" class="status-text">-</p>
+  <div class="status-card glass">
+    <span class="label">Status Cuaca</span>
+    <h2 id="statusCuaca">-</h2>
+    <div id="statusIcon" class="status-icon">☀️</div>
   </div>
 
 </main>
