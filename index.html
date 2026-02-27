@@ -2,23 +2,29 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Monitoring</title>
+
+<title>
+Penentuan Klasifikasi CUaca Pada Area Lahan Pertanian Menggunakan Metode K-Nearest neighbour
+</title>
+
 <link rel="stylesheet" href="css/style.css">
 <script src="js/auth.js"></script>
 </head>
 <body class="apple-bg">
 
-<header class="top-glass">
+<header class="top-glass glass">
   <div class="title-wrap">
     <h1>
-      Penentuan Klasifikasi CUaca Pada Area Lahan Pertanian
-      Menggunakan Metode K-Nearest neighbour
+      Penentuan Klasifikasi CUaca Pada Area Lahan Pertanian Menggunakan Metode
+      K-Nearest neighbour
     </h1>
   </div>
   <button class="btn-ghost" onclick="logout()">Logout</button>
 </header>
 
 <main class="grid-dashboard">
+
+  <!-- PARAMETER SENSOR -->
 
   <div class="metric glass">
     <span class="label">Suhu</span>
@@ -50,10 +56,54 @@
     <span class="unit">lux</span>
   </div>
 
+  <!-- STATUS -->
+
   <div class="status-card glass">
     <span class="label">Status Cuaca</span>
     <h2 id="statusCuaca">-</h2>
     <div id="statusIcon" class="status-icon">☀️</div>
+  </div>
+
+  <!-- PANEL KNN -->
+
+  <div class="knn-card glass">
+    <div class="knn-header">
+      <h3>Hasil Klasifikasi KNN</h3>
+      <span class="k-value">K = <b id="kValue">5</b></span>
+    </div>
+
+    <div class="knn-main">
+      <div class="knn-result">
+        <span class="knn-label">Kelas Hasil</span>
+        <div id="knnClass" class="knn-class">-</div>
+      </div>
+
+      <div class="knn-info">
+        <div>
+          <span class="mini-label">Rata-rata jarak</span>
+          <span id="avgDistance" class="mini-value">-</span>
+        </div>
+        <div>
+          <span class="mini-label">Tetangga terdekat</span>
+          <span id="nearestDistance" class="mini-value">-</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="knn-table-wrap">
+      <table class="knn-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Jarak</th>
+            <th>Kelas</th>
+          </tr>
+        </thead>
+        <tbody id="knnTable">
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
 </main>
